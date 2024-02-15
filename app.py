@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, jasonify
+from flask import Flask, request, render_template, jsonify
 
 app=Flask(__name__)
 JOBS=[
@@ -31,7 +31,7 @@ def hello_world():
                            jobs=JOBS)
 @app.route("/api/jobs")
 def job_list():
-    return jasonify(JOBS)
+    return jsonify(JOBS)
 
 
 
